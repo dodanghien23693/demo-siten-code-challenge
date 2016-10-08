@@ -14,7 +14,7 @@ var team1 = angular.module('team1', [
     $stateProvider
     .state('home', {
         url: '/',
-        templateUrl: 'index.html',
+        templateUrl: 'app/views/home.html',
         controller: 'MainCtrl',
     })
     .state('login', {
