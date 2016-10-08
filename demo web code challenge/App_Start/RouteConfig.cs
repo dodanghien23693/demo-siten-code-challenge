@@ -13,11 +13,16 @@ namespace demo_web_code_challenge
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
+
+            routes.MapPageRoute("login", "login", "~/index.html");
+            routes.MapPageRoute("register", "register", "~/index.html");
+            routes.MapPageRoute("home", "", "~/index.html");
+
         }
     }
 }

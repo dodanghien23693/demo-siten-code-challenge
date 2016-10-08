@@ -1,0 +1,210 @@
+﻿<html>
+
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name="author" content="siten.vn">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+
+    <link href="/assets/js/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+</head>
+<body ng-app="team1">
+    <div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+        <!-- Side Overlay-->
+        <aside id="side-overlay">
+            <!-- Side Overlay Scroll Container -->
+            <div id="side-overlay-scroll">
+                <!-- Side Header -->
+                <!--<div class="side-header side-content">
+                    <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    <span class="font-w600 push-10-l">Admin</span>
+                </div>-->
+                <!-- END Side Header -->
+
+            </div>
+            <!-- END Side Overlay Scroll Container -->
+        </aside>
+
+        <!-- END Side Overlay -->
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <!-- Sidebar Scroll Container -->
+            <div id="sidebar-scroll">
+                <!-- Sidebar Content -->
+                <!-- Adding .sidebar-mini-hide to an element will hide it when the sidebar is in mini mode -->
+                <div class="sidebar-content">
+                    <!-- Side Header -->
+                    <div class="side-header side-content bg-white-op">
+                        <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                        <button class="btn btn-link text-gray pull-right hidden-md hidden-lg" type="button" data-toggle="layout" data-action="sidebar_close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                     
+                        <!--<a class="h5 text-white" ui-sref="khoTong">
+                            
+                            <img class="logo" src="/assets/img/media/logo-white.svg" />
+                            <img class="logo-compact" src="/assets/img/media/logo-white-compact.svg" />
+                        </a>-->
+                    </div>
+                    <!-- END Side Header -->
+                    <!-- Side Content -->
+                    <div class="side-content">
+                        <ul class="nav-main">
+                      
+                            <!--<li class="nav-main-heading"><span class="sidebar-mini-hide">Kho tổng</span></li>-->
+                            <li>                             
+                               <a ui-sref="login">Đăng nhập</a>
+                            </li>
+                            <li>
+                                <a ui-sref="register">Đăng ký</a>
+                            </li>
+        
+                        </ul>
+                    </div>
+                    <!-- END Side Content -->
+                    <!-- Side Content -->
+                    <div class="side-footer sidebar-mini-hide">
+                        <!--<div>
+                            Mamifood Control Panel
+                        </div>
+                        <div>
+                            Powered by <a class="font-w600" href="http://siten.vn" target="_blank">Siten</a> &copy; <span class="js-year-copy"></span>
+                        </div>-->
+                    </div>
+                    <!-- END Side Content -->
+                </div>
+                <!-- Sidebar Content -->
+            </div>
+            <!-- END Sidebar Scroll Container -->
+        </nav>
+        <!-- END Sidebar -->
+        <!-- Header -->
+        <header id="header-navbar" class="content-mini content-mini-full">
+            <!-- Header Navigation Right -->
+            <ul class="nav-header pull-right">
+                <!--<li>
+                    <div class="btn btn-info" onClick="window.location='/Logout.aspx'"  href="/Logout.aspx">Đăng xuất</div>
+                </li>-->
+                <li>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                            <i class="si si-user"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                          
+                            <li class="dropdown-header">TÀI KHOẢN</li>
+                            <li>
+                                <a tabindex="-1" href="#">
+                                    <i class="si si-user pull-right"></i> Thông tin tài khoản
+                                </a>
+                            </li>
+                            <li>
+                                <a tabindex="-1" ng-click="mamifoodService.logout()" href="javascript:void(0)">
+                                    <i class="si si-logout pull-right"></i> Đăng xuất
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+            </ul>
+            <!-- END Header Navigation Right -->
+            <!-- Header Navigation Left -->
+            <ul class="nav-header pull-left">
+                <li class="hidden-md hidden-lg">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
+                        <i class="fa fa-navicon"></i>
+                    </button>
+                </li>
+                <li class="hidden-xs hidden-sm">
+                    <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                    <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                </li>
+                
+            </ul>
+            <!-- END Header Navigation Left -->
+        </header>
+        <!-- END Header -->
+        <!-- Main Container -->
+        <main  id="main-container">
+            <!--<div ng-view=""></div>-->
+            <div ui-view id="angular-controller" ng-cloak></div>
+        </main>
+        <!-- END Main Container -->
+        <!-- Footer -->
+        <!--<footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
+            <div class="pull-right">
+                Powered by <a class="font-w600" href="http://siten.vn" target="_blank">Siten</a>
+            </div>
+            <div class="pull-left">
+                <a class="font-w600" href="javascript:void(0)" target="_blank">Mamifood Control Panel</a> &copy; <span class="js-year-copy"></span>
+            </div>
+        </footer>-->
+        <!-- END Footer -->
+    </div>
+
+    <script>
+        function addCss(fileName) {
+
+            var head = document.head
+              , link = document.createElement('link')
+
+            link.type = 'text/css'
+            link.rel = 'stylesheet'
+            link.href = fileName
+
+            head.appendChild(link)
+        }
+
+       addCss("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700");
+
+    </script>
+
+    <link rel="stylesheet" href="/assets/css/oneui.css">
+    <script src="/assets/js/core/jquery.min.js"></script>
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/main.js"></script>
+    <!--<script src="/scripts/controllers/main.js"></script>-->
+
+
+    <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+
+    <script src="/assets/js/core/bootstrap.min.js"></script>
+    <script src="/assets/js/core/jquery.slimscroll.min.js"></script>
+    <script src="/assets/js/core/jquery.scrollLock.min.js"></script>
+    <script src="/assets/js/core/jquery.appear.min.js"></script>
+    <script src="/assets/js/core/jquery.countTo.min.js"></script>
+    <script src="/assets/js/core/jquery.placeholder.min.js"></script>
+    <script src="/assets/js/core/js.cookie.min.js"></script>
+    <script src="/assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/assets/js/plugins/jquery-validation/additional-methods.js"></script>
+    <script src="/assets/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="/assets/js/app.js"></script>
+
+    <script>
+        App.init();
+    </script>
+</body>
+</html>
+    
+
+    
+
+
+

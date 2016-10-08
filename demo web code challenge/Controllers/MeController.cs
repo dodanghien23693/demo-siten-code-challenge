@@ -14,7 +14,8 @@ using demo_web_code_challenge.Models;
 
 namespace demo_web_code_challenge.Controllers
 {
-    [Authorize]
+    [RoutePrefix("api")]
+    //[Authorize]
     public class MeController : ApiController
     {
         private ApplicationUserManager _userManager;
@@ -40,11 +41,14 @@ namespace demo_web_code_challenge.Controllers
             }
         }
 
+        [Route("info")]
         // GET api/Me
-        public GetViewModel Get()
+        public IHttpActionResult Get()
         {
+            
             var user = UserManager.FindById(User.Identity.GetUserId());
-            return new GetViewModel() { Hometown = user.Hometown };
+            return Ok(new { name = "Hiển", phone = "000393003930" });
+            //return new GetViewModel() { Hometown = user.Hometown };
         }
     }
 }
